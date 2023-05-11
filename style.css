@@ -1,0 +1,73 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.game {
+    /* align-content: center;
+    justify-content: center; */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    align-content: center;
+    height: 80vh;
+    width: 100vw;
+}
+
+.information {
+    height: 20vh;
+}
+
+.cell {
+    height: 100px;
+    width: 100px;
+    border: 1px black solid;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell.x::after,
+.cell.x::before {
+    content: "";
+    width: 10%;
+    height: 80%;
+    background-color: black;
+    position: absolute;
+}
+
+.cell.x::after {
+    transform: rotate(45deg);
+}
+
+.cell.x::before {
+    transform: rotate(-45deg);
+}
+
+.cell.o::after,
+.cell.o::before {
+    content: "";
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.cell.o::after {
+    background-color: white;
+    transform: scale(0.8);
+}
+.cell.o::before {
+    background-color: black;
+}
